@@ -1,0 +1,156 @@
+@import "fonts"
+@import "vars"
+
+*
+	box-sizing: border-box
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: "Roboto"
+	overflow-x: hidden
+	opacity: 1
+	display: flex
+	justify-content: center
+	align-items: center
+	background-color: #fff
+
+.header
+	position: relative
+	z-index: 2
+
+.logo
+	&__img
+		width: 128px
+		height: 128px
+		position: absolute
+		left: -33px
+		bottom: -80px
+.folders
+	display: flex
+	position: absolute
+	right: 176px
+	bottom: 0
+	&__folder
+		width: 72px
+		margin: 0 16px
+		font-style: normal
+		font-weight: normal
+		line-height: normal
+		font-size: 24px
+		text-align: center
+		border-width: 1px
+		border-style: solid
+		border-bottom-width: 0
+		&:after
+			content: ''
+			position: relative
+			background-color: #fff
+			display: none
+			width: 100%
+			height: 3px
+			bottom: -2px
+	&_active-orange
+		.folders__folder
+			border-color: $border-orange
+		.folders__folder_orange
+			border-width: 2px
+			border-bottom-width: 0
+			&:after
+				display: block
+	&_active-brown
+		.folders__folder
+			border-color: $border-brown
+		.folders__folder_brown
+			border-width: 2px
+			border-bottom-width: 0
+			&:after
+				display: block
+	&_active-red
+		.folders__folder
+			border-color: $border-red
+		.folders__folder_red
+			border-width: 2px
+			border-bottom-width: 0
+			&:after
+				display: block
+.burger
+	width: 37px
+	height: 24px
+	position: absolute
+	right: 0
+	bottom: 3.5px
+	background-image: url("../img/icons/burger.svg")
+	background-position: 0 0
+	background-size: auto 100%
+	background-repeat: no-repeat
+
+.t3-form		
+	max-width: 1152px
+	height: 576px
+	display: flex
+	position: relative
+	z-index: 1
+	&:before
+		content: ' '
+		display: block
+		width: 
+	&__slide
+		position: relative	
+		height: 100%
+	&__slide_img
+		height: 100%
+		position: relative
+		z-index: 1
+	&__slide_title
+		position: absolute
+		z-index: 2
+		width: 100%
+		text-align: center
+		color: #fff
+		font-weight: bold
+		font-size: 32px
+		line-height: normal
+		margin-top: 96px
+	&__fields
+		height: 100%
+		border-width: 2px
+		border-style: solid
+		border-left: none
+		border-bottom-right-radius: 50px
+	&_orange
+		.t3-form__fields
+			border-color: $border-orange
+
+		
+		
+	
+
+	
