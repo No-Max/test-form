@@ -3,31 +3,37 @@
 
 *
 	box-sizing: border-box
+	outline: none
+
 *::-webkit-input-placeholder
-	color: #666
+	color: inherit
 	opacity: 1
 
 *:-moz-placeholder
-	color: #666
+	color: inherit
 	opacity: 1
 
 *::-moz-placeholder
-	color: #666
+	color: inherit
 	opacity: 1
 
 *:-ms-input-placeholder
-	color: #666
+	color: inherit
 	opacity: 1
-
+a, a:hover, a:focus, a:visited
+	color: inherit
+	text-decoration: none
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-	color: #666
+	color: inherit
 body input:required:valid,
 body textarea:required:valid
-	color: #666
+	color: 	inherit
 
 html, body
 	height: 100%
+	padding: 0
+	margin: 0
 
 body
 	font-size: 16px
@@ -44,7 +50,8 @@ body
 
 .header
 	position: relative
-	z-index: 2
+	z-index: 4
+	width: 1152px
 
 .logo
 	&__img
@@ -53,54 +60,7 @@ body
 		position: absolute
 		left: -33px
 		bottom: -80px
-.folders
-	display: flex
-	position: absolute
-	right: 176px
-	bottom: 0
-	&__folder
-		width: 72px
-		margin: 0 16px
-		font-style: normal
-		font-weight: normal
-		line-height: normal
-		font-size: 24px
-		text-align: center
-		border-width: 1px
-		border-style: solid
-		border-bottom-width: 0
-		&:after
-			content: ''
-			position: relative
-			background-color: #fff
-			display: none
-			width: 100%
-			height: 3px
-			bottom: -2px
-	&_active-orange
-		.folders__folder
-			border-color: $border-orange
-		.folders__folder_orange
-			border-width: 2px
-			border-bottom-width: 0
-			&:after
-				display: block
-	&_active-brown
-		.folders__folder
-			border-color: $border-brown
-		.folders__folder_brown
-			border-width: 2px
-			border-bottom-width: 0
-			&:after
-				display: block
-	&_active-red
-		.folders__folder
-			border-color: $border-red
-		.folders__folder_red
-			border-width: 2px
-			border-bottom-width: 0
-			&:after
-				display: block
+
 .burger
 	width: 37px
 	height: 24px
@@ -112,16 +72,41 @@ body
 	background-size: auto 100%
 	background-repeat: no-repeat
 
-.t3-form		
-	max-width: 1152px
+.t3-form-container
 	height: 576px
-	display: flex
+	width: 1152px
 	position: relative
+
+.t3-form		
+	width: 100%
+	height: 100%	
+	position: absolute
+	top: 0
+	left: 0
 	z-index: 1
-	&:before
-		content: ' '
+	display: flex
+	background-color: #fff
+	&:after
+		position: absolute
 		display: block
-		width: 
+		height: 32px
+		top: -34px
+		right: 40px
+		width: 72px
+		margin: 0 16px
+		font-style: normal
+		font-weight: normal
+		line-height: normal
+		font-size: 24px
+		text-align: center
+		border-width: 1px
+		border-style: solid
+		border-bottom-color: #fff	
+		background-color: #fff
+	&.t3-form_active
+		z-index: 3
+		&:after
+			border-width: 2px
 	&__slide
 		position: relative	
 		height: 100%
@@ -141,16 +126,267 @@ body
 		margin-top: 96px
 	&__fields
 		height: 100%
+		width: 576px
 		border-width: 2px
 		border-style: solid
 		border-left: none
 		border-bottom-right-radius: 50px
-	&_orange
-		.t3-form__fields
+		padding-left: 120px
+		padding-top: 80px
+	&__input
+		width: 384px
+		height: 40px
+		display: block
+		border: none
+		display: block
+		font-style: normal
+		font-weight: normal
+		line-height: normal
+		font-size: 16px
+		padding: 0 16px
+		transition: 0.3s
+		&.t3-form__input_focus
+			padding-bottom: 20px
+			font-size: 8px
+		&.t3-form__input_input
+			padding-bottom: 0
+			font-size: inherit
+	&__text-error
+		font-style: normal
+		font-weight: normal
+		line-height: normal
+		font-size: 12px
+		color: #EB5757
+		display: none
+	&__group
+		padding-bottom: 30px
+		position: relative
+		&_patronymic
+			padding-bottom: 20px
+		&_gender
+			padding-bottom: 20px
+		&_date
+			padding-bottom: 15px
+		&_accept
+			padding-bottom: 20px
+		&_repeat-passw
+			padding-bottom: 48px
+		&_message
+			font-style: normal
+			font-weight: normal
+			line-height: normal
+			font-size: 24px
+			text-align: center
+			width: 384px
+			padding-top: 80px
+			padding-bottom: 0
+		&_text
+			font-style: normal
+			font-weight: normal
+			line-height: normal
+			font-size: 16px
+			text-align: center
+			width: 384px
+			padding-bottom: 40px
+			padding-top: 5px
+		&_error
+			.t3-form__input
+				border: 2px solid #EB5757
+				background-color: #E6DFDB
+			.t3-form__text-error
+				display: block
+			&:before
+				content: ''
+				display: block
+				width: 32px
+				height: 32px
+				position: absolute
+				right: 37px
+				top: 5px
+				background-image: url('../img/icons/error.svg')
+				z-index: 200
+	&__radio
+    	display: none            
+	&__radio-label
+		font-style: normal
+		font-weight: normal
+		line-height: normal
+		font-size: 16px
+		position: relative
+		display: inline-block
+		padding-left: 40px
+		width: 200px
+		cursor: pointer
+	&__radio-label::before
+		content: " "
+		display: block
+		height: 24px
+		width: 24px
+		border-radius: 50%
+		background-color: #C4C4C4
+		position: absolute
+		left: 0
+		top: 0		
+	&__radio-label::after
+		content: " "
+		display: block
+		height: 0
+		width: 0
+		border-radius: 50%
+		background-color: #FFB78F
+		position: absolute
+		margin: 12px
+		left: 0
+		top: 0		
+		transition: height 0.3s, width 0.3s, margin 0.3s
+	&__radio:checked + &__radio-label::after
+		height: 16px
+		width: 16px
+		margin: 4px
+	&__radio:disabled + &__radio-label::before
+    	opacity: 0.3
+	&__checkbox
+    	display: none            
+	&__checkbox-label
+		font-style: normal
+		font-weight: normal
+		line-height: normal
+		font-size: 12px
+		position: relative
+		display: inline-block
+		padding-left: 32px
+		cursor: pointer
+	&__checkbox-label::before
+		content: " "
+		display: block
+		height: 16px
+		width: 16px
+		background-color: #C4C4C4
+		position: absolute
+		left: 0
+		top: 0
+	&__checkbox-label::after
+		content: " "
+		display: none
+		height: 16px
+		width: 16px
+		border-radius: 50%
+		background-image: url('../img/icons/checkbox.svg')
+		background-position: 0 0
+		background-repeat: no-repeat
+		background-size: 100%
+		position: absolute
+		margin: 1px
+		left: 0
+		top: 0
+	&__checkbox:checked + &__checkbox-label::after
+		display: block
+	&__checkbox:disabled + &__checkbox-label::before
+    	opacity: 0.3
+	&__btn
+		color: #FFFFFF
+		font-style: normal
+		font-weight: bold
+		line-height: normal
+		font-size: 24px		
+		width: 384px
+		height: 56px
+		position: relative
+		cursor: pointer
+		transition: 0.2s
+		&_arrow
+			padding-left: 72px
+			text-align: left
+			&:after
+				content: " "
+				display: block
+				width: 73px
+				height: 8px
+				position: absolute
+				right: 72px
+				top: 25px
+				background-image: url("../img/icons/arrow.svg")
+				background-position: 0 0
+				background-repeat: no-repeat
+				transition: right 0.4s
+			&:hover:after
+				right: 65px		
+
+	
+.t3-form_orange
+	&:after
+		content: '1'
+		right: 384px
+	&.t3-form_active:after
+		border-color: $border-orange
+		border-bottom-color: #fff
+	.t3-form
+		&__fields
 			border-color: $border-orange
+		&__input
+			background-color: #FFB78F
+			&.t3-form__input_focus
+				border: 2px solid #FE6E20
+			&.t3-form__input_input
+				background-color: #E6DFDB
+		&__btn
+			background-color: #FF6E20
+			border: 2px solid #FF6E20
+			&:hover
+				background-color: transparent
+				color: #FF6E20
+			&:active
+				background-color: #F2AA83
+				color: #fff	
 
-		
-		
-	
+.t3-form_brown
+	&:after
+		content: '2'
+		right: 280px
+	&.t3-form_active:after
+		border-color: $border-brown
+		border-bottom-color: #fff
+	.t3-form
+		&__fields
+			border-color: $border-brown
+		&__input
+			background-color: #EBBD80
+			&.t3-form__input_focus
+				border: 2px solid $border-brown
+			&.t3-form__input_input
+				background-color: #E6DFDB
+		&__btn
+			background-color: #D77B00
+			border: 2px solid #D77B00
+			&:hover
+				background-color: transparent
+				color: #D77B00
+			&:active
+				background-color: #EBBD80
+				color: #fff	
 
-	
+.t3-form_red
+	&:after
+		content: '3'
+		right: 177px
+	&.t3-form_active:after
+		border-color: $border-red
+		border-bottom-color: #fff
+	.t3-form
+		&__fields
+			border-color: $border-red
+		&__input
+			background-color: #F39B93
+			&.t3-form__input_focus
+				border: 2px solid #E93A29
+			&.t3-form__input_input
+				background-color: #E6DFDB
+		&__btn
+			background-color: #E93A29
+			border: 2px solid #E93A29
+			&:hover
+				background-color: transparent
+				color: #E93A29
+			&:active
+				background-color: #F39B93
+				color: #fff	
