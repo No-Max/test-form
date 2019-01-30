@@ -63,13 +63,13 @@
 				</div>
 				<div class="t3-form__fields">
 					<div class="t3-form__group">
-						<input class="t3-form__input validate-required" type="text" id="lastName" placeholder="Фамилия" autocomplete="off">
+						<input class="t3-form__input validate name required" type="text" id="lastName" placeholder="Фамилия" autocomplete="off">
 					</div>
 					<div class="t3-form__group">	
-						<input class="t3-form__input validate-required" type="text" id="firstName" placeholder="Имя" autocomplete="off">
+						<input class="t3-form__input validate name required" type="text" id="firstName" placeholder="Имя" autocomplete="off">
 					</div>
 					<div class="t3-form__group t3-form__group_patronymic"> 
-						<input class="t3-form__input validate-required" type="text" id="patronymic" placeholder="Отчество" autocomplete="off">			
+						<input class="t3-form__input validate name required" type="text" id="patronymic" placeholder="Отчество" autocomplete="off">			
 					</div>
 					<div class="t3-form__group t3-form__group_gender">
 						<input class="t3-form__radio" type="radio" checked id="gender1" name="gender" value="male">
@@ -78,10 +78,10 @@
 						<label class="t3-form__radio-label" for="gender2">Женщина</label>
 					</div>
 					<div class="t3-form__group t3-form__group_date">
-						<input type="text" class="t3-form__input validate-required t3-form__input_date" id="date" min="1930-01-01" max="2010-12-31" placeholder="Дата рождения">
+						<input type="text" class="t3-form__input validate required t3-form__input_date" id="date" min="1930-01-01" max="2010-12-31" placeholder="Дата рождения">
 					</div>
 					<div class="t3-form__group t3-form__group_accept">
-						<input class="t3-form__checkbox validate-conditions" type="checkbox" name="acceptConditions" id="acceptConditions">
+						<input class="t3-form__checkbox validate conditions" type="checkbox" name="acceptConditions" id="acceptConditions">
 						<label class="t3-form__checkbox-label" for="acceptConditions">Соглашаюсь с условиями участия</label>
 					</div>
 					<button class="t3-form__btn t3-form__btn_arrow">
@@ -89,7 +89,6 @@
 					</button>
 				</div>
 			</form>
-
 
 			<form class="t3-form t3-form_brown">
 				<div class="t3-form__slide">
@@ -101,23 +100,22 @@
 				</div>
 				<div class="t3-form__fields">
 					<div class="t3-form__group">
-						<input class="t3-form__input validate-required validate-phone" type="text" placeholder="Телефон" autocomplete="off">
+						<input class="t3-form__input validate required phone" type="text" placeholder="Телефон" autocomplete="off">
 					</div>
 					<div class="t3-form__group">	
-						<input class="t3-form__input validate-required validate-email" type="text" placeholder="Email" autocomplete="off">
+						<input class="t3-form__input validate required email" type="text" placeholder="Email" autocomplete="off">
 					</div>
 					<div class="t3-form__group">
-						<input class="t3-form__input validate-required t3-form__input_password" type="password" placeholder="Пароль" autocomplete="off">				
+						<input class="t3-form__input validate required t3-form__input_password" type="password" placeholder="Пароль" autocomplete="off">				
 					</div>
 					<div class="t3-form__group t3-form__group_repeat-passw">
-						<input class="t3-form__input validate-required validate-password" type="password" placeholder="Повторить пароль" autocomplete="off">			
+						<input class="t3-form__input validate required password" type="password" placeholder="Повторить пароль" autocomplete="off">			
 					</div>
 					<button class="t3-form__btn t3-form__btn_arrow">
 						Продолжить	
 					</button>
 				</div>
 			</form>
-
 
 			<form class="t3-form t3-form_red">
 				<div class="t3-form__slide">
@@ -136,7 +134,7 @@
 						Введите его в поле ниже:
 					</div>
 					<div class="t3-form__group t3-form__group_code">
-						<input class="t3-form__input validate-code" type="text" placeholder="Код" autocomplete="off">			
+						<input class="t3-form__input validate code" type="text" placeholder="Код" autocomplete="off">			
 					</div>
 					<button class="t3-form__btn">
 						Продолжить	
