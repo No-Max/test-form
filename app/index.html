@@ -35,7 +35,21 @@
 			<div class="logo">
 				<img class="logo__img" src="img/logo.svg" alt="Logo">
 			</div>
-			<a href="#" class="burger"></a>	
+			<div class="navigation" id="navigation">
+				<a href="#">
+					Главная
+				</a>
+				<a href="#">
+					О нас 
+				</a>
+				<a href="#">
+					Отзывы
+				</a>
+				<a href="#">
+					Контакты
+				</a>
+			</div>
+			<a href="#" class="burger" id="navBtn"></a>	
 		</div>		
 
 		<div class="t3-form-container">
@@ -49,16 +63,13 @@
 				</div>
 				<div class="t3-form__fields">
 					<div class="t3-form__group">
-						<input class="t3-form__input" type="text" id="lastName" placeholder="Фамилия" autocomplete="off">
+						<input class="t3-form__input validate-required" type="text" id="lastName" placeholder="Фамилия" autocomplete="off">
 					</div>
 					<div class="t3-form__group">	
-						<input class="t3-form__input" type="text" id="firstName" placeholder="Имя" autocomplete="off">
+						<input class="t3-form__input validate-required" type="text" id="firstName" placeholder="Имя" autocomplete="off">
 					</div>
-					<div class="t3-form__group t3-form__group_patronymic t3-form__group_error">
-						<input class="t3-form__input" type="text" id="patronymic" placeholder="Отчество" autocomplete="off">	
-						<div class="t3-form__text-error">
-							Это поле обязательное для заполнения
-						</div>		
+					<div class="t3-form__group t3-form__group_patronymic"> 
+						<input class="t3-form__input validate-required" type="text" id="patronymic" placeholder="Отчество" autocomplete="off">			
 					</div>
 					<div class="t3-form__group t3-form__group_gender">
 						<input class="t3-form__radio" type="radio" checked id="gender1" name="gender" value="male">
@@ -67,10 +78,10 @@
 						<label class="t3-form__radio-label" for="gender2">Женщина</label>
 					</div>
 					<div class="t3-form__group t3-form__group_date">
-						<input type="text" class="t3-form__input" id="date" placeholder="Дата рождения">
+						<input type="text" class="t3-form__input validate-required t3-form__input_date" id="date" min="1930-01-01" max="2010-12-31" placeholder="Дата рождения">
 					</div>
 					<div class="t3-form__group t3-form__group_accept">
-						<input class="t3-form__checkbox" type="checkbox" name="acceptConditions" id="acceptConditions">
+						<input class="t3-form__checkbox validate-conditions" type="checkbox" name="acceptConditions" id="acceptConditions">
 						<label class="t3-form__checkbox-label" for="acceptConditions">Соглашаюсь с условиями участия</label>
 					</div>
 					<button class="t3-form__btn t3-form__btn_arrow">
@@ -90,16 +101,16 @@
 				</div>
 				<div class="t3-form__fields">
 					<div class="t3-form__group">
-						<input class="t3-form__input" type="text" placeholder="Телефон" autocomplete="off">
+						<input class="t3-form__input validate-required validate-phone" type="text" placeholder="Телефон" autocomplete="off">
 					</div>
 					<div class="t3-form__group">	
-						<input class="t3-form__input" type="text" placeholder="Email" autocomplete="off">
+						<input class="t3-form__input validate-required validate-email" type="text" placeholder="Email" autocomplete="off">
 					</div>
 					<div class="t3-form__group">
-						<input class="t3-form__input" type="text" placeholder="Пароль" autocomplete="off">				
+						<input class="t3-form__input validate-required t3-form__input_password" type="password" placeholder="Пароль" autocomplete="off">				
 					</div>
 					<div class="t3-form__group t3-form__group_repeat-passw">
-						<input class="t3-form__input" type="text" placeholder="Повторить пароль" autocomplete="off">			
+						<input class="t3-form__input validate-required validate-password" type="password" placeholder="Повторить пароль" autocomplete="off">			
 					</div>
 					<button class="t3-form__btn t3-form__btn_arrow">
 						Продолжить	
@@ -125,7 +136,7 @@
 						Введите его в поле ниже:
 					</div>
 					<div class="t3-form__group t3-form__group_code">
-						<input class="t3-form__input" type="text" placeholder="Код" autocomplete="off">			
+						<input class="t3-form__input validate-code" type="text" placeholder="Код" autocomplete="off">			
 					</div>
 					<button class="t3-form__btn">
 						Продолжить	
